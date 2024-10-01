@@ -1,0 +1,35 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<h2>Your Bookings</h2>
+</br>
+
+{% if bookings %}
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Kitchen Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Number of Kitchens</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.id }}</td>
+                <td>{{ booking.kitchen_id }}</td>
+                <td>{{ booking.start_date }}</td>
+                <td>{{ booking.end_date }}</td>
+                <td>{{ booking.number_of_cookers }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</br>
+{% else %}
+    <p>You have no bookings.</p>
+{% endif %}
+</br>
+<a href="{% url 'home' %}">Return to Home</a>

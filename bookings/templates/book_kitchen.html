@@ -1,0 +1,8 @@
+{% load static %}
+<form method="post">
+    {% csrf_token %}
+    <p>Note, if you had booked before, the second booking will be registered under your previous user.</p>
+    {{ form.as_p }}
+    <button type="submit">Book Kitchen</button>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</form>

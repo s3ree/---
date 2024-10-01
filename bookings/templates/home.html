@@ -1,0 +1,10 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h1>Welcome to BookaKitchen!</h1>
+    <p>Need an industrial kitchen for bulk cooking of items? We offer hygienic and powerful burners for commercial use. Book a kitchen today!</p>
+    <a href="{% url 'book_kitchen' %}">Book a Kitchen</a>
+    <a href="{% url 'user_bookings' %}">View Bookings</a>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
